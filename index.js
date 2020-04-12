@@ -15,13 +15,13 @@ let net = null;
 }  
 
 async function app(){
-    //console.log('loading model...');
+	console.log('loading model...');
 	// tensorflow.js 1.0.0
 	//const MODEL_URL = '/model/model.json'
 	// https://js.tensorflow.org/api/1.0.0/#loadGraphModel
-	const model = await tf.loadLayersModel('model/model.json')
-    console.log('Sucessfully loaded model');
-    await predict();
+	const model = await tf.loadLayersModel('model/model.json');
+    	console.log('Sucessfully loaded model');
+    	await predict();
 }
 
 
