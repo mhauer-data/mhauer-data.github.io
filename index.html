@@ -2,32 +2,36 @@
 <html>
 <head>
 <!-- Loading in TensorFlow.js version 1.7.2 -->
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.2/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.1.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
 <head>
 <body>
   <div class="container" style="margin-top:20px">
     <h1 align="center">
       Beard growth AI
     </h1>
-    <br></br>
-    <p>
-      In order to get predict your beard, you have to do the following steps:
-        <li>Upload a image.</li>
-        <li>The model will predict the image.</li>
+    <center><p>
+      To predict your beard length, you just have to take a picture:
     </p>
-    <br></br>
-    <input type="file" onchange="showFiles(event)" accept=".png, .jpg, .jpeg">
-    <br></br>
-    <center>
-    <img id='idImage' style="width: 224px; height: 224px;" align="center">
-    </center>
-    <!--<div id='console'></div>-->
-    <br></br>
-    <center><div id="chart_div"></div></center>
+<video
+      width="224"
+      height="224"
+      autoplay
+      playsinline
+      muted
+      id="player"
+    ></video>    <!-- Play the webcam feed through this video tag. -->
+    <canvas id="output"></canvas>
+	<canvas id="another" width="224" height="224"></canvas>
+	<br><button onclick="Trigger()">Predict</button>
+	<br>
+	<p>Your beard is growing for: <b id="demo">X</b> days</p>
+	</center>
     <script src="index.js"></script>
     <br></br>
 </body>
-</div>
+
 <script type="text/javascript">
 </script>
 </html>
